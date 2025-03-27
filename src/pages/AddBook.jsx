@@ -13,7 +13,13 @@ const handleSubmit = async (event) => {
   const formData = new FormData(event.target);
   
   try {
-    const response = await apiSignup(payload);
+    // const response = await apiSignup(payload); 
+    // console.log(response);
+
+    //this part is for login. just using this info because login unavailable
+    const response = await apiSignup(formData); 
+    localStorage.setItem("token", response.data.token)
+  
     console.log(response);
 
     //const response = await apiSignup(formData);
